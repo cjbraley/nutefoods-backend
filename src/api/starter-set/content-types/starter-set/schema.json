@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "starter_sets",
+  "info": {
+    "singularName": "starter-set",
+    "pluralName": "starter-sets",
+    "displayName": "starter_set",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tagline": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "bundles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bundle.bundle",
+      "mappedBy": "starter_set"
+    },
+    "icebars": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::icebar.icebar",
+      "inversedBy": "starter_sets"
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

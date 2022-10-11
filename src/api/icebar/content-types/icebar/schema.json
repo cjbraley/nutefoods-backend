@@ -1,0 +1,119 @@
+{
+  "kind": "collectionType",
+  "collectionName": "icebars",
+  "info": {
+    "singularName": "icebar",
+    "pluralName": "icebars",
+    "displayName": "icebar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "img_icebar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "img_smoothie": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "img_carousel": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "alt_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tagline": {
+      "type": "text",
+      "required": true
+    },
+    "color_hex": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "unique": false,
+      "required": true
+    },
+    "nutrition": {
+      "type": "json",
+      "required": true
+    },
+    "whatCanIDoForYou": {
+      "type": "json",
+      "required": true
+    },
+    "tryMe": {
+      "type": "json",
+      "required": true
+    },
+    "highlights": {
+      "type": "json",
+      "required": true
+    },
+    "ingredients": {
+      "type": "text",
+      "required": true
+    },
+    "img_ingredients": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "starter_sets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::starter-set.starter-set",
+      "mappedBy": "icebars"
+    },
+    "create_your_set_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "caption": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "img_create_your_set": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sort_order": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
